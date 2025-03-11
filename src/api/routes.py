@@ -38,3 +38,8 @@ def handle_signup():
     db.session.commit()
     
     return jsonify({"msg" : "user created succesfully"}), 201 
+
+@api.route('/events', methods=['GET'])
+def get_events():
+    events = Event.query.all()
+    return jsonify([event.serialize() for event in events]), 200
