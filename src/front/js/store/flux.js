@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               }
           ],
           user: null,
+          token:undefined,
           events: []
       },
       actions: {
@@ -58,6 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   if (data.token) {
                       localStorage.setItem("token", data.token);
                       setStore({ user: data });
+                      setStore({token:data.token})
                   }
                   return data;
               } catch (error) {
