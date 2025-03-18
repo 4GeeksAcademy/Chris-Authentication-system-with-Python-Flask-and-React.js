@@ -10,7 +10,7 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 					<Link to="/login">
-						<button className="btn btn-primary">login</button>
+						<button className="btn btn-primary me-2">login</button>
 					</Link>
 					<Link to="/signup">
 						<button className="btn btn-primary">signup</button>
