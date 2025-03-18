@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { actions } = useContext(Context);
+	const handleLogout=() => {
+		actions.logout()
+	}
 	return (
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
@@ -15,6 +20,7 @@ export const Navbar = () => {
 					<Link to="/signup">
 						<button className="btn btn-primary">signup</button>
 					</Link>
+					<button className="btn btn-primary me-2"onClick={handleLogout}>logout</button>
 				</div>
 			</div>
 		</nav>
